@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    column-gap: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+.icon{
+    font-size: 20px;
+}
+.text-content{
+    font-weight: 500;
+}
