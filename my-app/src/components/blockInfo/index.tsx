@@ -8,7 +8,6 @@ type Props = {
 }
 const cx = classNames.bind(Styles)
 const BlockInfo = (props : Props) => {
-    console.log(typeof props.icon);
     
   return (
     <div className={cx('wrapper')}>

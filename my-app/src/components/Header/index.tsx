@@ -7,7 +7,6 @@ import { faMagnifyingGlass, faTruckFast, faLocationDot, faBagShopping } from '@f
 import BlockInfo from '../blockInfo';
 const cx = classNames.bind(Styles)
 const Header = () => {
-  console.log(cx('container'));
 
   return (
     <div className={cx('container')}>
