@@ -3,7 +3,7 @@ import React from 'react'
 import Styles from './blockInfo.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 type Props = {
-    icon ?: object,
+    icon ?: any,
     text : String
 }
 const cx = classNames.bind(Styles)

@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faTruckFast, faLocationDot, faBagShopping } from '@fortawesome/free-solid-svg-icons'
 import BlockInfo from '../blockInfo';
+import { SearchOutlined } from '@ant-design/icons';
 const cx = classNames.bind(Styles)
 const Header = () => {
 
@@ -15,7 +16,7 @@ const Header = () => {
           <img className={cx('logo')} src={logo} alt="" />
         </div>
         <div className={cx('wraper-search')}>
-          <button className={cx('btn-search')}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+          <button className={cx('btn-search')}><SearchOutlined /></button>
           <input className={cx('input-search')} type="text" />
         </div>
         <div className={cx('wraper-info')}>
