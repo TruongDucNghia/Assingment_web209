@@ -16,3 +16,9 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
 }
+.custom-antd textarea{
+  border-radius: 0px 0px 10px 10px;
+}
+.custom-antd textarea::placeholder{
+  color: #333;
+}

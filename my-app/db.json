@@ -1,0 +1,57 @@
+{
+  "products": [
+    {
+      "descriptionShort": "siêu nhanh",
+      "name": "Laptop dell 2002",
+      "price": "9000000",
+      "saleOffPrice": "8000000",
+      "categories": "phone",
+      "feature": "Vô địch",
+      "description": "Siêu mạnh",
+      "id": 1
+    },
+    {
+      "descriptionShort": "siêu nhanh",
+      "name": "Laptop dell 2002",
+      "price": "100000000",
+      "saleOffPrice": "8000000",
+      "categories": "phone",
+      "feature": "Vô địch",
+      "description": "Siêu mạnh",
+      "id": 2
+    },
+    {
+      "descriptionShort": "kdmf",
+      "name": "ádas",
+      "price": "đá",
+      "saleOffPrice": "đ",
+      "categories": "phone",
+      "feature": "sdklf",
+      "description": "jsnf",
+      "id": 3
+    },
+    {
+      "descriptionShort": "siêu nhanh",
+      "name": "Laptop dell 2002",
+      "price": "9000000",
+      "saleOffPrice": "8000000",
+      "categories": "phoness",
+      "feature": "alo alo ",
+      "description": "siêu mạnh",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658304169/anhhtus/n7uasz0foplkncsmdy2u.webp",
+      "id": 4
+    },
+    {
+      "descriptionShort": "ádn",
+      "name": "Laptop dell ",
+      "price": "9000000",
+      "saleOffPrice": "8000000",
+      "categories": "phones",
+      "feature": "đá",
+      "description": "ád",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658306051/anhhtus/ce5wugdzkgk9kpcgcrpt.jpg",
+      "id": 5
+    }
+  ],
+  "users": []
+}
