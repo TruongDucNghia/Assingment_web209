@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import Header from '../admin/Header'
 
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
@@ -11,7 +11,7 @@ const { Content, Sider } = Layout;
 
 
 const items2: MenuProps['items'] = [
-  {key: "Laptop", icon: <LaptopOutlined/>, label: "Laptop"},
+  {key: "Laptop", icon: <LaptopOutlined/>, label: <NavLink to={'products'}>Products</NavLink>},
   {key: "Phone", icon: <NotificationOutlined/>, label: "Phone"},
   {key: "Tai nghe", icon: <LaptopOutlined/>, label: "Tai Nghe"}
 ]

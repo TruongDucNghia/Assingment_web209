@@ -1,29 +1,42 @@
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { Breadcrumb, Button, Col, Form, Input, Row, Select, Space, Typography, message } from 'antd';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { addProduct } from '../../../api/products';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate, useParams } from 'react-router-dom';
+import { addProduct, getDetailProducts, updateProducts } from '../../../api/products';
 import UploadImage from '../../../components/UploadImage';
+import { Iproduct } from '../../../model/products';
 
-const { Option } = Select;
-
-const areas = [
-    { label: 'Beijing', value: 'Beijing' },
-    { label: 'Shanghai', value: 'Shanghai' },
-];
-
-const sights = {
-    Beijing: ['Tiananmen', 'Great Wall'],
-    Shanghai: ['Oriental Pearl', 'The Bund'],
-};
-
-type SightsKeys = keyof typeof sights;
 type Props = {}
 
 const AddProduct = (props: Props) => {
-    const [form] = Form.useForm();
+    const {reset, register, handleSubmit} = useForm()
     const [image, setImage] = useState('')
+    const [data, setData] = useState<Iproduct>({
+        name: '',
+        price: 0,
+        image: '',
+        saleOffPrice: 0,
+        categories: '',
+        feature: '',
+        description: '',
+        descriptionShort: ''
+    })
     const navigate = useNavigate()
+    const {id} = useParams()
+    useEffect(() =>{
+        if(id){
+            const get = async (id: any) =>{
+                const res = await getDetailProducts(id)
+                setData(res.data)
+                reset(res.data)
+                console.log(res.data);
+                
+            }
+            get(id)
+        }
+    }, [])
+    
 
     const handleImage = (data : any) =>{
         setImage(data)   
@@ -32,9 +45,15 @@ const AddProduct = (props: Props) => {
     const onFinish = async (values: any) => {
         if(image !== ""){
             try {
-                const res = await addProduct({...values, image})
-                message.success('Thêm sản phẩm thành công !')
-                navigate('/admin/products')
+                if(id){
+                    const res = await updateProducts({...values, image, id})
+                    message.success('Cập nhật sản phẩm thành công !')
+                    navigate('/admin/products')
+                }else{
+                    const res = await addProduct({...values, image})
+                    message.success('Thêm sản phẩm thành công !')
+                    navigate('/admin/products')
+                }
                 
             } catch (error) {
                 console.log('lỗi');        
@@ -43,15 +62,16 @@ const AddProduct = (props: Props) => {
             alert('Vui lòng nhập ảnh sản phẩm !!!')
         }
         
+        
     };
-
+    
     return (
         <>
             <Breadcrumb>
                 <Typography.Title level={2}>Thêm mới</Typography.Title>
             </Breadcrumb>
             <Form
-                initialValues={{}}
+                initialValues={data}
                 onFinish={onFinish}
                 autoComplete="on"
                 labelCol={{ span: 24 }}
@@ -76,7 +96,7 @@ const AddProduct = (props: Props) => {
                             label="Tên Sản Phẩm"
                             rules={[{ required: true, message: "Bạn phải nhập tên cho sản phẩm !" }]}
                         >
-                            <Input size='large' />
+                            <Input {...register('name')}  type={'name'} size='large' />
                         </Form.Item>
                         <Row gutter={16}>
                             <Col span={12}>
@@ -108,9 +128,9 @@ const AddProduct = (props: Props) => {
                                 >
                                     <Select size='large'>
                                         <Select.Option value="phone" selected>Điện Thoại</Select.Option>
-                                        <Select.Option value="phones">Điện Thoại</Select.Option>
-                                        <Select.Option value="phoness">Điện Thoại</Select.Option>
-                                        <Select.Option value="phonesss">Điện Thoại</Select.Option>
+                                        <Select.Option value="laptop">Laptop</Select.Option>
+                                        <Select.Option value="tai nghe">Tai nghe</Select.Option>
+                                        <Select.Option value="Phụ kiện">Phụ kiện</Select.Option>
                                     </Select>
                                 </Form.Item>
                             </Col>

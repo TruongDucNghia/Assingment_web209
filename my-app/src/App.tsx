@@ -21,6 +21,7 @@ function App() {
         <Route path='products'>
           <Route index element={<ListProducts/>}/>
           <Route path='add' element={<AddProduct/>}/>  
+          <Route path=':id/update' element={<AddProduct/>}/>  
         </Route>
       </Route>
     </Routes>
