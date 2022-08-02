@@ -1,37 +1,23 @@
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { Breadcrumb, Button, Col, Form, Input, Row, Select, Space, Typography, message } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { addProduct, getDetailProducts, updateProducts } from '../../../api/products';
 import UploadImage from '../../../components/UploadImage';
-import { Iproduct } from '../../../model/products';
 
 type Props = {}
-
 const AddProduct = (props: Props) => {
-    const {reset, register, handleSubmit} = useForm()
-    const [image, setImage] = useState('')
-    const [data, setData] = useState<Iproduct>({
-        name: '',
-        price: 0,
-        image: '',
-        saleOffPrice: 0,
-        categories: '',
-        feature: '',
-        description: '',
-        descriptionShort: ''
-    })
     const navigate = useNavigate()
     const {id} = useParams()
+    const [form] = Form.useForm()
+    const [image, setImage] = useState('')
+    const [img, setImg] = useState()
+    
     useEffect(() =>{
         if(id){
             const get = async (id: any) =>{
                 const res = await getDetailProducts(id)
-                setData(res.data)
-                reset(res.data)
-                console.log(res.data);
-                
+                form.setFieldsValue(res.data)
+                UploadImage(form.getFieldValue('image'))
             }
             get(id)
         }
@@ -71,14 +57,14 @@ const AddProduct = (props: Props) => {
                 <Typography.Title level={2}>Thêm mới</Typography.Title>
             </Breadcrumb>
             <Form
-                initialValues={data}
+                form={form}
                 onFinish={onFinish}
                 autoComplete="on"
                 labelCol={{ span: 24 }}
             >
                 <Row gutter={16}>
                 <Col span={10}>
-                    <UploadImage image={handleImage} />
+                    <UploadImage initValue={img} image={handleImage} />
                     <Form.Item
                         className='custom-antd'
                         name={'descriptionShort'}
@@ -96,7 +82,7 @@ const AddProduct = (props: Props) => {
                             label="Tên Sản Phẩm"
                             rules={[{ required: true, message: "Bạn phải nhập tên cho sản phẩm !" }]}
                         >
-                            <Input {...register('name')}  type={'name'} size='large' />
+                            <Input size='large' />
                         </Form.Item>
                         <Row gutter={16}>
                             <Col span={12}>

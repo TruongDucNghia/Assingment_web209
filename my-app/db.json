@@ -45,5 +45,19 @@
       "id": 7
     }
   ],
-  "users": []
+  "users": [],
+  "categories": [
+    {
+      "name": "Laptop",
+      "id": 1
+    },
+    {
+      "name": "tai nghe 2123",
+      "id": 2
+    },
+    {
+      "name": "ádbasjd",
+      "id": 3
+    }
+  ]
 }

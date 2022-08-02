@@ -1,9 +1,10 @@
 import { PlusSquareOutlined } from '@ant-design/icons'
 import classNames from 'classnames/bind'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { upload } from '../../api/image'
 import styles from './upload.module.css'
 type Props = {
+  initValue: any
   image: (data : any) => void
 }
 const cx = classNames.bind(styles)
@@ -13,6 +14,10 @@ const UploadImage = (props: Props) => {
   const imgError : any = "https://www.freeiconspng.com/thumbs/error-icon/error-icon-32.png"
   const [img, setImg] = useState()
 
+  // setImg(props.initValue)
+  console.log(props.initValue);
+  
+  
   const changeImg = (event : any) =>{
     const file = event.target.files[0]
     // previewFile(file)
