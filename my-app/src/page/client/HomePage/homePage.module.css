@@ -1,0 +1,55 @@
+.wrapper-banner{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    
+}
+.wrapper-menu{
+    width: 200px;
+}
+.banner img{
+    width: 900px;
+}
+.wrapper-title{
+    width: 1100px;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+.wrapper-Top_product{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+.wrapper-produc_main{
+    width: 1100px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 25px;
+}
+.wrapper-phuKien{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    margin-bottom: 100px;
+}
+.content-phuKien{
+    width: 1100px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    column-gap: 20px;
+}

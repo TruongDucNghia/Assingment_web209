@@ -3,9 +3,10 @@ import logo from '../../asset/img/logo.png'
 import Styles from './header.module.css'
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faTruckFast, faLocationDot, faBagShopping } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faTruckFast, faLocationDot, faBagShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 import BlockInfo from '../blockInfo';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined, UserOutlined } from '@ant-design/icons';
+import Singin from '../singin';
 const cx = classNames.bind(Styles)
 const Header = () => {
 
@@ -22,7 +23,7 @@ const Header = () => {
         <div className={cx('wraper-info')}>
           <BlockInfo text={'Gọi mua hàng 1800.2097'}/>
           <BlockInfo text={'Cửa hàng gần bạn'} icon={faLocationDot}/>
-          <BlockInfo text={'Tra cứu đơn hàng'} icon={faTruckFast}/>
+          <BlockInfo text={'Tài khoản'} icon={faUser}/>
           <BlockInfo text={'Giỏ hàng'} icon={faBagShopping}/>
         </div>
       </div>

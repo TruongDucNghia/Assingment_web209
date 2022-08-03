@@ -1,0 +1,49 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0px 10px;
+}
+.img-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name-product{
+    margin: 10px 0px 15px 0px;
+}
+.wrapper-price{
+    display: flex;
+    margin-bottom: 10px;
+}
+.newPrice{
+    color: red;
+    font-size: 17px;
+}
+.oldPrice{
+    color: #707070;
+    font-size: 15px;
+}
+.infor{
+    background-color: #F3F4F6;
+    border-radius: 10px;
+    padding: 5px;
+}
+.review{
+    display: flex;
+    align-items: center;
+}
+.star{
+    display: flex;
+}
+.name-product{
+    font-size: 15px;
+}
+.wrapper-price{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+.review{
+    margin-top: 15px;
+}
